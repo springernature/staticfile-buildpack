@@ -4,6 +4,26 @@
 
 A Cloud Foundry [buildpack](https://docs.cloudfoundry.org/buildpacks/) for static content such as websites (HTML/JS/CSS).
 
+## staticfile-lua
+
+This fork uses [OpenResty](http://openresty.org/en/) 1.13.6.2, which provides Lua support.
+
+OpenResty for `cflinuxfs2` was built on an Ubuntu 14.04.5 VM:
+
+```
+sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential libgeoip-dev git symlinks
+curl -sSL https://openresty.org/download/openresty-1.13.6.2.tar.gz | tar xzf -
+cd openresty-1.13.6.2
+git clone git://github.com/vozlt/nginx-module-vts.git
+./configure --with-luajit --with-pcre-jit --with-http_realip_module --with-ipv6 --with-http_stub_status_module --prefix=/home/vcap/app --add-module=./nginx-module-vts
+sudo rm -rf /home/vcap/app
+sudo make install
+sudo symlinks -crv /home/vcap/app
+tar czvf nginx-1.13.6.2-cflinuxfs2.tgz -C /home/vcap/app .
+```
+
+`cflinuxfs3` is not currently supported.
+
 ### Buildpack User Documentation
 
 Official buildpack documentation can be found at [staticfile buildpack docs](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html).
