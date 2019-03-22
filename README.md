@@ -22,7 +22,11 @@ sudo symlinks -crv /home/vcap/app
 tar czvf nginx-1.13.6.2-cflinuxfs2.tgz -C /home/vcap/app .
 ```
 
-`cflinuxfs3` is not currently supported.
+For `cflinuxfs3` an Ubuntu 18.04 VM was used. You'll need to additionally run the below before the previous instructions:
+```
+sudo add-apt-repository universe # for "symlinks"
+sudo apt install zlib1g-dev
+```
 
 ### Buildpack User Documentation
 
