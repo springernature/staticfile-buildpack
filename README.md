@@ -6,23 +6,23 @@ A Cloud Foundry [buildpack](https://docs.cloudfoundry.org/buildpacks/) for stati
 
 ## staticfile-lua
 
-This fork uses [OpenResty](http://openresty.org/en/) 1.13.6.2, which provides Lua support.
+This fork uses [OpenResty](http://openresty.org/en/) 1.15.8.1, which provides Lua support.
 
-OpenResty for `cflinuxfs2` was built on an Ubuntu 14.04.5 VM:
+OpenResty for `cflinuxfs2` was built on an Ubuntu 14.04.6 VM:
 
 ```
 sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential libgeoip-dev git symlinks
-curl -sSL https://openresty.org/download/openresty-1.13.6.2.tar.gz | tar xzf -
-cd openresty-1.13.6.2
+curl -sSL https://openresty.org/download/openresty-1.15.8.1.tar.gz | tar xzf -
+cd openresty-1.15.8.1
 git clone git://github.com/vozlt/nginx-module-vts.git
 ./configure --with-luajit --with-pcre-jit --with-http_realip_module --with-ipv6 --with-http_stub_status_module --prefix=/home/vcap/app --add-module=./nginx-module-vts
 sudo rm -rf /home/vcap/app
 sudo make install
 sudo symlinks -crv /home/vcap/app
-tar czvf nginx-1.13.6.2-cflinuxfs2.tgz -C /home/vcap/app .
+tar czvf nginx-1.15.8.1-cflinuxfs2.tgz -C /home/vcap/app .
 ```
 
-For `cflinuxfs3` an Ubuntu 18.04 VM was used. You'll need to additionally run the below before the previous instructions:
+For `cflinuxfs3` an Ubuntu 18.04.2 VM was used. You'll need to additionally run the below before the previous instructions:
 ```
 sudo add-apt-repository universe # for "symlinks"
 sudo apt install zlib1g-dev
