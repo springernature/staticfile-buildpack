@@ -17,7 +17,10 @@ const (
 # ------------------------------------------------------------------------------------------------
 
 export APP_ROOT=$HOME
-export LD_LIBRARY_PATH=$DEPS_DIR/0/luajit/lib:$APP_ROOT/nginx/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$APP_ROOT/nginx/lib:$LD_LIBRARY_PATH
+
+ln -sf $DEPS_DIR/0/lualib $APP_ROOT/lualib
+ln -sf $DEPS_DIR/0/luajit $APP_ROOT/luajit
 
 mv $APP_ROOT/nginx/conf/nginx.conf $APP_ROOT/nginx/conf/nginx.conf.erb
 erb $APP_ROOT/nginx/conf/nginx.conf.erb > $APP_ROOT/nginx/conf/nginx.conf
