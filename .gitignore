@@ -7,3 +7,4 @@ staticfile_buildpack*.zip
 pkg/
 !vendor/**
 /.bin/
+/.vscode/
