@@ -8,7 +8,7 @@ A Cloud Foundry [buildpack](https://docs.cloudfoundry.org/buildpacks/) for stati
 
 This fork uses [OpenResty](http://openresty.org/en/) 1.15.8.1, which provides Lua support.
 
-Ideally this should be moved to work off the [nginx](https://github.com/cloudfoundry/nginx-buildpack) buildpack; however, that uses a different (not `erb`) templating system, so moving would break some of the apps that depend on this.
+Ideally this should be moved to work off the [nginx](https://github.com/cloudfoundry/nginx-buildpack) buildpack; however, that uses a different (not `erb`) templating system, and further appears to be [in the process of being replaced(https://github.com/cloudfoundry/nginx-buildpack/issues/18#issuecomment-541827184).
 
 OpenResty for `cflinuxfs2` was built on an Ubuntu 14.04.6 VM:
 
