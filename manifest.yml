@@ -6,14 +6,6 @@ default_versions:
 dependencies:
 - name: nginx
   version: 1.15.8-1
-  uri: https://raw.githubusercontent.com/springernature/staticfile-buildpack/master/dist/nginx-1.15.8.1-cflinuxfs2.tgz
-  sha256: 470ae7dc9febc76d363d7dc1f546462335f7434e3d97fcc0a7a85cb141bb6e3f
-  cf_stacks:
-  - cflinuxfs2
-  source: https://openresty.org/download/openresty-1.15.8.1.tar.gz
-  source_sha256: 89a1238ca177692d6903c0adbea5bdf2a0b82c383662a73c03ebf5ef9f570842
-- name: nginx
-  version: 1.15.8-1
   uri: https://raw.githubusercontent.com/springernature/staticfile-buildpack/master/dist/nginx-1.15.8.1-cflinuxfs3.tgz
   sha256: f567ae5805e98f00e0ee773038743588ffa46301fddd7fe141b8f10d970f0711
   cf_stacks:
