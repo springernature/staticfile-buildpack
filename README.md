@@ -17,8 +17,7 @@ sudo add-apt-repository universe # for "symlinks"
 sudo apt zlib1g-dev install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential libgeoip-dev git symlinks
 curl -sSL https://openresty.org/download/openresty-1.15.8.2.tar.gz | tar xzf -
 cd openresty-1.15.8.2
-git clone git://github.com/vozlt/nginx-module-vts.git
-./configure --with-luajit --with-pcre-jit --with-http_realip_module --with-ipv6 --with-http_stub_status_module --prefix=/home/vcap/app --add-module=./nginx-module-vts
+./configure --with-luajit --with-pcre-jit --with-http_realip_module --with-ipv6 --with-http_stub_status_module --prefix=/home/vcap/app
 sudo rm -rf /home/vcap/app
 sudo make install
 sudo symlinks -crv /home/vcap/app
