@@ -6,6 +6,8 @@ A Cloud Foundry [buildpack](https://docs.cloudfoundry.org/buildpacks/) for stati
 
 ## staticfile-lua
 
+**WARNING** This is deprecated - please use the standard [nginx-buildpack](https://github.com/cloudfoundry/nginx-buildpack) in preference, as this will no longer be maintained and may vanish at any point.
+
 This fork uses [OpenResty](http://openresty.org/en/) 1.15.8.2, which provides Lua support.
 
 Ideally this should be moved to work off the [nginx](https://github.com/cloudfoundry/nginx-buildpack) buildpack; however, that uses a different (not `erb`) templating system, and further appears to be [in the process of being replaced(https://github.com/cloudfoundry/nginx-buildpack/issues/18#issuecomment-541827184).
